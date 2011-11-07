@@ -10,38 +10,15 @@
 
 <div class="row">
 	<h1>The Team</h1>
-	<div class="teamMember">
-		<img class="thumbnail" src="http://placehold.it/90x90" alt="">
-		<div class="span10">
-			<h3>Susanne Sorensen</h3>
-			<h5>Programme Manager</h5>
-			<p>
-			A summary about the person in a short paragraph, possibly written
-			by the person themselves.
-			A summary about the person in a short paragraph, possibly written
-			by the person themselves.
-			A summary about the person in a short paragraph, possibly written
-			by the person themselves.
-			</p>
+	#{list items:teamMembers, as:'team'}
+		<div class="teamMember">
+			<img class="thumbnail" src="${team.getImageLocation()}" alt="">
+			<div class="span10">
+				<h3>${team.getName()}</h3>
+				<h5>${team.getJobTitle()}</h5>
+				<p>${team.getSummary()}</p>
+			</div>
 		</div>
-	</div>
-	
-	<div class="teamMember">
-		<img class="thumbnail" src="http://placehold.it/90x90" alt="">
-		<div class="span10">
-			<h3>Susanne Sorensen</h3>
-			<h5>Programme Manager</h5>
-			<p>
-			A summary about the person in a short paragraph, possibly written
-			by the person themselves.
-			A summary about the person in a short paragraph, possibly written
-			by the person themselves.
-			A summary about the person in a short paragraph, possibly written
-			by the person themselves.
-			</p>
-		</div>
-	</div>
-	
-	
+	#{/list}
 </div>
 	

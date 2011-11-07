@@ -7,24 +7,28 @@
 	<li><a href="/theteam">The Team</a></li>
 	<li><a href="/contact">Contact</a></li>
 </ul>
-
+	
 <div class="row">
 	<h1>Screening Locations</h1>
-	<p>
-Ashford: Ashford Clinic: Stanwell Road, Ashford, TW 
-Camberley: Camberley Health Centre: 159 Frimley Road, Camberley, Surrey, GU15
-Caterham:  Caterham Dene Hospital, 
-Dorking: Medwyn Centre, Reigate Road, Dorking, Surrey, RH4 1SD
-Epsom: John Kilner Unit, Epsom General Hospital, 
-Farnham: Outpatients, Farnham Hospital, Hale Road, Farnham, Surrey, GU9 9QL
-Guildford: Fairlands Medical Centre, Fairlands Avenue, Guildford, Surrey, GU3 3NA.
-Leatherhead:
-Thames Ditton: 
-Redhill: Greystone House Surgery, 99 Station Road, Redhill, Surrey, 
-Oxted: Oxted Health Centre, 
-Weybridge: Weybridge Community Hospital, 
-Woking: Woking Community Hospital, Heathside Road, Woking, Surrey, GU
-	</p>
+	#{list items:clinicLocations, as:'location'}
+		<div class="clinicLocation">
+			<div style="padding-top:10px;padding-left:0px;display:inline-block;float:left">
+				<img class="thumbnail" src="${location.getImageLocation()}" alt="">	
+			</div>
+			<div class="span10">
+				<h3>${location.getName()}</h3>
+				<div class="span4">
+					<h5>Address</h5>
+					<address>${location.getAddress().raw()}</address>
+				</div>
+				<div class="span4">
+					<h5>Clinic Hours</h5>
+					<p>${location.getClinicHours()}</p>
+				</div>
+			</div>
+		</div>
+	#{/list}
 </div>
+	
 	
 

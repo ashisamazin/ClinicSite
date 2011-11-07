@@ -12,19 +12,16 @@
 	<h1>Contact</h1>
 	<div class="span3">
 		<h4>Address</h4>
-		<p>
-		DRSSS<br/>
-		Farnham Hospital<br/>
-		Hale Road<br/>
-		Farnham<br/>
-		Surrey<br/>
-		GU9 9QL<br/>
-		</p>
+		#{if contact}
+		<p>${contact.getAddress()}</p>
+		#{/if}
 	</div>
 	
 	<div class="span3">
 		<h4>Telephone</h4>
-		<p>01483 782272</p>
+		#{if contact}
+		<p>${contact.getPhone()}</p>
+		#{/if}
 	</div>
 
 	<img class="phoneIcon" src="/public/images/Phone-Icon.jpg"/>

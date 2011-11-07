@@ -1,11 +1,15 @@
 package controllers;
 
-import play.mvc.*;
+import java.util.List;
+
+import models.TeamMember;
+import play.mvc.Controller;
 
 public class Team extends Controller {
 
     public static void index() {
-        render();
+    	List<TeamMember> teamMembers = TeamMember.findAll();
+        render(teamMembers);
     }
 
 }

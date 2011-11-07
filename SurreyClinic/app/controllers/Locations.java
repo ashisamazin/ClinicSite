@@ -1,11 +1,15 @@
 package controllers;
 
-import play.mvc.*;
+import java.util.List;
+
+import models.Clinic;
+import play.mvc.Controller;
 
 public class Locations extends Controller {
 
     public static void index() {
-        render();
+    	List<Clinic> clinicLocations = Clinic.findAll();
+    	render(clinicLocations);
     }
 
 }

@@ -1,11 +1,22 @@
 package controllers;
 
-import play.mvc.*;
+import java.util.List;
 
-public class Contact extends Controller {
+import models.ContactDetails;
+import play.mvc.Controller;
 
-    public static void index() {
-        render();
-    }
+public class Contact extends Controller
+{
+
+	public static void index()
+	{
+		List<ContactDetails> contactDetails = ContactDetails.findAll();
+		if (contactDetails != null && contactDetails.size() > 0)
+		{
+			ContactDetails contact = contactDetails.get(0);
+			render(contact);
+		}
+		render();
+	}
 
 }
