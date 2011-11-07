@@ -5,13 +5,13 @@ import javax.persistence.Entity;
 import play.db.jpa.Model;
 
 @Entity
-public class ContactDetails extends Model
+public class ContactInformation extends Model
 {
 
 	private String address;
 	private String phone;
 
-	public ContactDetails(String address, String phone)
+	public ContactInformation(String address, String phone)
 	{
 		super();
 		this.address = address;
