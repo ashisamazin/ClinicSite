@@ -3,7 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.index
+GET     /                                       Home.index
+GET     /theteam                                Team.index
+GET     /locations                              Locations.index
+GET     /contact                                Contact.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
