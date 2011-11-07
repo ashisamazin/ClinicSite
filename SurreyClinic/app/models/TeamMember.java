@@ -42,4 +42,30 @@ public class TeamMember extends Model
 		return imageLocation;
 	}
 
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public void setJobTitle(String jobTitle)
+	{
+		this.jobTitle = jobTitle;
+	}
+
+	public void setSummary(String summary)
+	{
+		this.summary = summary;
+	}
+
+	public void setImageLocation(String imageLocation)
+	{
+		this.imageLocation = imageLocation;
+	}
+
+	@Override
+	public String toString()
+	{
+		return name;
+	}
+
 }

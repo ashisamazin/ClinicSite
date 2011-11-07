@@ -28,4 +28,20 @@ public class ContactInformation extends Model
 		return phone;
 	}
 
+	public void setAddress(String address)
+	{
+		this.address = address;
+	}
+
+	public void setPhone(String phone)
+	{
+		this.phone = phone;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Contact Information";
+	}
+
 }

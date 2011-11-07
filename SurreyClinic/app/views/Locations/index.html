@@ -1,12 +1,18 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
+
+
+
 <ul class="pills">
 	<li><a href="/">Home</a></li>
 	<li class="active"><a href="#">Screening Locations</a></li>
 	<li><a href="/theteam">The Team</a></li>
 	<li><a href="/contact">Contact</a></li>
 </ul>
+	
+
+	
 	
 <div class="row">
 	<h1>Screening Locations</h1>
@@ -19,7 +25,7 @@
 				<h3>${location.getName()}</h3>
 				<div class="span4">
 					<h5>Address</h5>
-					<address>${location.getAddress().raw()}</address>
+					<address>${location.getHTMLEscapedAddress().raw()}</address>
 				</div>
 				<div class="span4">
 					<h5>Clinic Hours</h5>

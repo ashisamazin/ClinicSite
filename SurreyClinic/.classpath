@@ -2,6 +2,8 @@
 <classpath>
 	<classpathentry excluding="views/**" kind="src" path="app"/>
 	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="crud"/>
+	<classpathentry kind="src" path="secure"/>
 	
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:\Program Files\play-1.2.3\framework\play-1.2.3.jar" sourcepath="C:/program files/play-1.2.3/framework/src" />

@@ -38,7 +38,26 @@ public class HomeModel extends Model
 	{
 		return paragraphs;
 	}
-	
-	
+
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
+
+	public void setTitleType(String titleType)
+	{
+		this.titleType = titleType;
+	}
+
+	public void setParagraphs(List<Paragraph> paragraphs)
+	{
+		this.paragraphs = paragraphs;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Home Page";
+	}
 
 }
