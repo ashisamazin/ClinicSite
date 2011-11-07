@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
@@ -13,19 +14,20 @@ public class Clinic extends Model
 	private String name;
 	@Required
 	private String clinicHours;
+	@Lob
 	@Required
 	@MaxSize(10000)
 	private String address;
+	@Required
+	private String postcode;
 
-	private String imageLocation;
-
-	public Clinic(String name, String clinicHours, String address, String imageLocation)
+	public Clinic(String name, String clinicHours, String address, String postcode)
 	{
 		super();
 		this.name = name;
 		this.clinicHours = clinicHours;
 		this.address = address;
-		this.imageLocation = imageLocation;
+		this.postcode = postcode;
 	}
 
 	public String getName()
@@ -52,11 +54,6 @@ public class Clinic extends Model
 		return address;
 	}
 
-	public String getImageLocation()
-	{
-		return imageLocation;
-	}
-
 	public void setName(String name)
 	{
 		this.name = name;
@@ -72,9 +69,20 @@ public class Clinic extends Model
 		this.address = address;
 	}
 
-	public void setImageLocation(String imageLocation)
+	public String getPostcode()
 	{
-		this.imageLocation = imageLocation;
+		return postcode;
+	}
+
+	public void setPostcode(String postcode)
+	{
+		this.postcode = postcode;
+	}
+
+	public String getMapsURL()
+	{
+		return "http://maps.googleapis.com/maps/api/staticmap?center=" + postcode
+				+ "&zoom=13&size=300x200&maptype=roadmap&sensor=false&markers=" + postcode;
 	}
 
 	@Override

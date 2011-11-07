@@ -11,27 +11,20 @@
 	<li><a href="/contact">Contact</a></li>
 </ul>
 	
-
-	
-	
 <div class="row">
 	<h1>Screening Locations</h1>
 	#{list items:clinicLocations, as:'location'}
-		<div class="clinicLocation">
-			<div style="padding-top:10px;padding-left:0px;display:inline-block;float:left">
-				<img class="thumbnail" src="${location.getImageLocation()}" alt="">	
-			</div>
-			<div class="span10">
+		<div class="span12" style="padding-bottom:20px;padding-top:10px;border-bottom: 1px solid #eee;margin:0;padding-left:10px">
 				<h3>${location.getName()}</h3>
-				<div class="span4">
+				<div class="span6" style="margin:0;padding-left:10px">
 					<h5>Address</h5>
 					<address>${location.getHTMLEscapedAddress().raw()}</address>
-				</div>
-				<div class="span4">
 					<h5>Clinic Hours</h5>
 					<p>${location.getClinicHours()}</p>
 				</div>
-			</div>
+				<div class="clinicmap">
+					<img src="${location.getMapsURL()}"/>
+				</div>
 		</div>
 	#{/list}
 </div>

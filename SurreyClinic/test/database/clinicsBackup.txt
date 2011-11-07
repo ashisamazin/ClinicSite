@@ -1,0 +1,1 @@
+[{"name":"Appointments run from 8:50am to 3:40pm. This clinic is open Monday, Tuesday and Friday","clinicHours":"Greystone House Surgery","address":"99 Station Road\r\nRedhill\r\nRH1 1EB","postcode":"99 Station Road\r\nRedhill\r\nRH1 1EB"}]

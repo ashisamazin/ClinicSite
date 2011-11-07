@@ -13,9 +13,7 @@
 	<div class="row">
 		#{list items:homeModel, as:'home'}
 			<${home.getTitleType()}>${home.getTitle()}</${home.getTitleType()}>
-				#{list items:home.getParagraphs(), as:'paragraph'}
-					<p>${paragraph.getParagraph()}</p>
-				#{/list}		
+				<p>${home.getContentAsHTML().raw()}</p>		
 		#{/list}
 	</div>
 #{/if}

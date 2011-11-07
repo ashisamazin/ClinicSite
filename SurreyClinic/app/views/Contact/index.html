@@ -10,10 +10,13 @@
 
 <div class="row">
 	<h1>Contact</h1>
+	<div class="span10">
+		<p>#{if contact}${contact.getSummaryAsHTML().raw()}#{/if}</p>
+	</div>
 	<div class="span3">
 		<h4>Address</h4>
 		#{if contact}
-		<p>${contact.getAddress()}</p>
+		<p>${contact.getAddressAsHTML().raw()}</p>
 		#{/if}
 	</div>
 	

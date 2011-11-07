@@ -10,15 +10,22 @@
 
 <div class="row">
 	<h1>The Team</h1>
-	#{list items:teamMembers, as:'team'}
-		<div class="teamMember">
-			<img class="thumbnail" src="${team.getImageLocation()}" alt="">
-			<div class="span10">
-				<h3>${team.getName()}</h3>
-				<h5>${team.getJobTitle()}</h5>
-				<p>${team.getSummary()}</p>
+	#{list items:teamMembers, as:'team'}	
+			<div class="span12" style="padding-bottom:20px;padding-top:20px;border-bottom: 1px solid #eee">
+				<div class="thumbnail">
+					#{if team.getImageLocation() != null && team.getImageLocation().length() > 0}
+						<img src="${team.getImageLocation()}" alt="">	
+					#{/if}
+					#{else}
+						<img src="/public/images/placeholder_person.gif" alt="">
+					#{/else}
+				</div>
+				<div class="span9">
+					<h3>${team.getName()}</h3>
+					<h5>${team.getJobTitle()}</h5>
+					<p>${team.getSummary()}</p>
+				</div>
 			</div>
-		</div>
 	#{/list}
 </div>
 	

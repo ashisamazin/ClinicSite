@@ -1,27 +1,31 @@
 package models;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.Lob;
 
+import play.data.validation.MaxSize;
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 @Entity
 public class HomeModel extends Model
 {
 
+	@Required
 	private String title;
+	@Required
 	private String titleType;
-	@OneToMany
-	private List<Paragraph> paragraphs;
+	@Lob
+	@Required
+	@MaxSize(10000)
+	private String content;
 
-	public HomeModel(String title, String titleType, List<Paragraph> paragraphs)
+	public HomeModel(String title, String titleType, String content)
 	{
 		super();
 		this.title = title;
 		this.titleType = titleType;
-		this.paragraphs = paragraphs;
+		this.content = content;
 	}
 
 	public String getTitle()
@@ -34,9 +38,9 @@ public class HomeModel extends Model
 		return titleType;
 	}
 
-	public List<Paragraph> getParagraphs()
+	public String getContent()
 	{
-		return paragraphs;
+		return content;
 	}
 
 	public void setTitle(String title)
@@ -49,15 +53,24 @@ public class HomeModel extends Model
 		this.titleType = titleType;
 	}
 
-	public void setParagraphs(List<Paragraph> paragraphs)
+	public void setContent(String content)
 	{
-		this.paragraphs = paragraphs;
+		this.content = content;
+	}
+
+	public String getContentAsHTML()
+	{
+		if (content != null)
+		{
+			return content.replaceAll("\n", "<br/>");
+		}
+		return content;
 	}
 
 	@Override
 	public String toString()
 	{
-		return "Home Page";
+		return title;
 	}
 
 }
